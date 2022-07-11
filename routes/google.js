@@ -15,7 +15,7 @@ const clientSecret = vault.read("secret/data/GoogleStrategy/secret");
 // with a user object, which will be set at `req.user` in route handlers after
 // authentication.
 passport.use(new GoogleStrategy({
-  clientID: vault.read("secret/data/GoogleStrategy/id"),
+  clientID: "THIS_IS_HARD_CODED",
   clientSecret: clientSecret,
   callbackURL: '/oauth2/redirect/google',
   scope: [ 'profile' ],
