@@ -2,9 +2,10 @@ var express = require('express');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20');
 var db = require('../db');
+const vault = require("node-vault");
 
 
-const clientSecret = "THIS_IS_HARD_CODED";
+const clientSecret = vault.read("secret/data/GoogleStrategy/secret");
 
 // Configure the Facebook strategy for use by Passport.
 //
