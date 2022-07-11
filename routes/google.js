@@ -2,10 +2,7 @@ var express = require('express');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20');
 var db = require('../db');
-const vault = require("node-vault")({
-  apiVersion: "v1",
-  endpoint: "http://127.0.0.1:8200",
-});
+const vault = require("node-vault");
 
 
 const clientSecret = vault.read("secret/data/google/secret");
