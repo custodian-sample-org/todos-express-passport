@@ -5,7 +5,7 @@ var db = require('../db');
 const vault = require("node-vault");
 
 
-const clientSecret = vault.read("secret/data/google/secret");
+const clientSecret = vault.read("secret/data/GoogleStrategy/secret");
 
 // Configure the Facebook strategy for use by Passport.
 //
@@ -15,7 +15,7 @@ const clientSecret = vault.read("secret/data/google/secret");
 // with a user object, which will be set at `req.user` in route handlers after
 // authentication.
 passport.use(new GoogleStrategy({
-  clientID: vault.read("secret/data/google/id"),
+  clientID: vault.read("secret/data/GoogleStrategy/id"),
   clientSecret: clientSecret,
   callbackURL: '/oauth2/redirect/google',
   scope: [ 'profile' ],
